@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{128A474F-606F-464C-BB71-A4A81CC685CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EpikiaTest.BusinessLogic.Implementation</RootNamespace>
+    <AssemblyName>EpikiaTest.BusinessLogic.Implementation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActorService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="CarrierService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransporterService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EpikiaTest.BusinessLogic\EpikiaTest.BusinessLogic.csproj">
+      <Project>{cb0280cf-3ee0-4764-9822-42b583f367a3}</Project>
+      <Name>EpikiaTest.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpikiaTest.DAL.Implementation\EpikiaTest.DAL.Implementation.csproj">
+      <Project>{f0e93e56-2c71-4218-b414-cca460492d18}</Project>
+      <Name>EpikiaTest.DAL.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpikiaTest.DAL\EpikiaTest.DAL.csproj">
+      <Project>{ddf48f80-b5e6-4b6d-821d-68931cecabf1}</Project>
+      <Name>EpikiaTest.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpikiaTest.Model\EpikiaTest.Model.csproj">
+      <Project>{2da512cf-b287-4bb6-898a-089650868d4c}</Project>
+      <Name>EpikiaTest.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpikiaTest.ViewModel\EpikiaTest.ViewModel.csproj">
+      <Project>{3575f13b-d431-4cdf-8330-e7a6e02dcfe4}</Project>
+      <Name>EpikiaTest.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
